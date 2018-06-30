@@ -22,9 +22,3 @@ if __name__ == '__main__':
     print("==" * 20)
     print("成绩 = ", ret)
 
-    s = shelve.open('test_shelf.db')
-
-    try:
-        s['n'] = n
-    finally:
-        s.close()
