@@ -3,3 +3,5 @@
 https://github.com/makeyourownneuralnetwork/makeyourownneuralnetwork
 
 仅以面向对象形式稍作修改，以备自用、学习。
+
+请将mnist_dataset.zip解压至项目根目录
