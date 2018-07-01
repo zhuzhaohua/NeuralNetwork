@@ -12,6 +12,7 @@ def load_data(file_path):
     for record in training_data_list:
         # 输入
         all_values = record.split(',')
+        #标准化输入数据
         inputs = (np.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
         X.append(inputs)
         Y.append(all_values[0])
@@ -19,7 +20,7 @@ def load_data(file_path):
     return cross_validation.train_test_split(X, Y, test_size=0.25, random_state=0, stratify=Y)
 
 
-# 测试：
+# 测试方法：
 def test_MLPClassifier(*data):
     X_train, X_test, Y_train, Y_test = data
     nn = MLPClassifier(activation='logistic', max_iter=1000, hidden_layer_sizes=(100,))
@@ -30,7 +31,6 @@ def test_MLPClassifier(*data):
 
 
 if __name__ == '__main__':
-
     # 开始测试：
     X_train, X_test, Y_train, Y_test = load_data('./mnist_dataset/mnist_train_100.csv')
     test_MLPClassifier(X_train, X_test, Y_train, Y_test)
